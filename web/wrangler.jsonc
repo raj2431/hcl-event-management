@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "SmartEventManagement-angular-free",
+  "compatibility_date": "2026-09-11",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "dist/ng-SmartEventManagement/browser",
+    "not_found_handling": "single-page-application"
+  }
+}
