@@ -1,7 +1,7 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const rateLimit = require('express-rate-limit');
-const { default: verifyTokenSignature } = require('./middleware/jwt');
+const { verifyTokenSignature } = require('./middleware/jwt');
 
 const app = express();
 const PORT = 8000; // Gateway port

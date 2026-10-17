@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-
 /**
  * To verify the jwt
  * @param {*} req 
@@ -30,4 +29,4 @@ const verifyTokenSignature = (req, res, next) => {
     });
 };
 
-export default verifyTokenSignature;
+module.exports = { verifyTokenSignature };
