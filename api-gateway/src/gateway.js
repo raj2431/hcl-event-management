@@ -1,6 +1,7 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const rateLimit = require('express-rate-limit');
+const { default: verifyTokenSignature } = require('./middleware/jwt');
 
 const app = express();
 const PORT = 8000; // Gateway port
@@ -13,14 +14,13 @@ const limiter = rateLimit({
 });
 
 app.use(limiter);
-
-const excludedPaths = ['/auth/login', '/api/events'];
+app.use(verifyTokenSignature);
+const excludedPaths = ['/auth/login', '/api/events', '/auth/register'];
 
 app.use((req, res, next) => {
   if (excludedPaths.includes(req.path)) {
     return next(); // Skip JWT verification
   }
-  
   // Run JWT verification here...
   next();
 });
@@ -43,7 +43,7 @@ app.use('/auth', createProxyMiddleware({
   target: SERVICES.auth,
   changeOrigin: true,
   pathRewrite: {
-    '^/auth': '', // Strip /users from the forwarded request path
+    '^/auth': '', // 
   }
 }));
 
