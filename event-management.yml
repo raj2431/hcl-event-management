@@ -1,0 +1,64 @@
+name: Event Management
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-local-deployment
+  cancel-in-progress: false
+
+jobs:
+  build-test-deploy:
+    name: Build, Test and Deploy
+    runs-on: self-hosted
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Deploy files to Windows localhost
+        run: |
+          // command here
+
+      - name: Install production dependencies
+        working-directory: C:\Desktop\EventManagement
+        run: npm ci --omit=dev
+
+      - name: Start or restart application
+        working-directory: C:\Desktop\EventManagement
+        run: |
+          if (!(Test-Path "package.json")) {
+            throw "package.json not found."
+          }
+          
+          if (!(Get-Command pm2.cmd -ErrorAction SilentlyContinue)) {
+            throw "PM2 is missing. Install it with npm install -g pm2."
+          }
+          
+      - name: Deployment complete
+        if: success()
+        run: |
+          Write-Host "Deployment successful!"
+          Write-Host "Application directory: path of code"
+          Write-Host "Check your configured localhost port."
