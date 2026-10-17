@@ -45,7 +45,7 @@
             }"
           >
             @if ((isExpanded$ | async) || (isHovered$ | async) || (isMobileOpen$ | async)) 
-            { Menu } 
+            {  } 
            @else {
             <svg
               width="1em"
@@ -200,9 +200,9 @@
                 @if (nav.path) {
                 <a
                   [routerLink]="nav.path"
-                  routerLinkActive="menu-item-active"
                   class="menu-item group"
-                  [ngClass]="{ 'menu-item-inactive': !isActive(nav.path) }"
+                  [class.menu-item-active]="isActive(nav.path)"
+                  [class.menu-item-inactive]="!isActive(nav.path)"
                 >
                   <span
                     class="menu-item-icon-size"
@@ -233,7 +233,7 @@
         <!-- end support section -->
 
         <!-- Others Section -->
-        <div>
+        <!-- <div>
           <h2
             class="mb-4 text-xs uppercase flex leading-[20px] text-gray-400"
             [ngClass]="{
@@ -406,9 +406,9 @@
                 @if (nav.path) {
                 <a
                   [routerLink]="nav.path"
-                  routerLinkActive="menu-item-active"
                   class="menu-item group"
-                  [ngClass]="{ 'menu-item-inactive': !isActive(nav.path) }"
+                  [class.menu-item-active]="isActive(nav.path)"
+                  [class.menu-item-inactive]="!isActive(nav.path)"
                 >
                   <span
                     class="menu-item-icon-size"
@@ -432,7 +432,7 @@
             </li>
             }
           </ul>
-        </div>
+        </div> -->
         <!-- end other section -->
       </div>
     </nav>

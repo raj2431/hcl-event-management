@@ -18,6 +18,8 @@ import { VideosComponent } from './pages/ui-elements/videos/videos.component';
 import { SignInComponent } from './pages/auth-pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/auth-pages/sign-up/sign-up.component';
 import { CalenderComponent } from './pages/calender/calender.component';
+import { EventsPageComponent } from './pages/events/events.component';
+import { UsersPageComponent } from './pages/users/users.component';
 
 export const routes: Routes = [
   {
@@ -32,29 +34,39 @@ export const routes: Routes = [
           'Angular Ecommerce Dashboard | SmartEventManagement - Angular Admin Dashboard Template',
       },
       {
+        path:'events',
+        component:EventsPageComponent,
+        title:'Angular Events Dashboard | SmartEventManagement - Angular Admin Dashboard Template'
+      },
+      {
+        path:'users',
+        component:UsersPageComponent,
+        title:'App Users | SmartEventManagement'
+      },
+      {
         path:'calendar',
         component:CalenderComponent,
-        title:'Angular Calender | SmartEventManagement - Angular Admin Dashboard Template'
+        title:'Angular Calender | SmartEventManagement'
       },
       {
         path:'profile',
         component:ProfileComponent,
-        title:'Angular Profile Dashboard | SmartEventManagement - Angular Admin Dashboard Template'
+        title:'SmartEventManagement'
       },
       {
         path:'form-elements',
         component:FormElementsComponent,
-        title:'Angular Form Elements Dashboard | SmartEventManagement - Angular Admin Dashboard Template'
+        title:'SmartEventManagement'
       },
       {
         path:'basic-tables',
         component:BasicTablesComponent,
-        title:'Angular Basic Tables Dashboard | SmartEventManagement - Angular Admin Dashboard Template'
+        title:'SmartEventManagement'
       },
       {
         path:'blank',
         component:BlankComponent,
-        title:'Angular Blank Dashboard | SmartEventManagement - Angular Admin Dashboard Template'
+        title:'SmartEventManagement'
       },
       // support tickets
       {

@@ -5,6 +5,7 @@ import { MonthlyTargetComponent } from '../../../shared/components/ecommerce/mon
 import { StatisticsChartComponent } from '../../../shared/components/ecommerce/statics-chart/statics-chart.component';
 import { DemographicCardComponent } from '../../../shared/components/ecommerce/demographic-card/demographic-card.component';
 import { RecentOrdersComponent } from '../../../shared/components/ecommerce/recent-orders/recent-orders.component';
+import { EventManagerComponent } from '../../../shared/components/ecommerce/event-manager/event-manager.component';
 
 @Component({
   selector: 'app-ecommerce',
@@ -15,6 +16,7 @@ import { RecentOrdersComponent } from '../../../shared/components/ecommerce/rece
     StatisticsChartComponent,
     DemographicCardComponent,
     RecentOrdersComponent,
+    EventManagerComponent,
   ],
   templateUrl: './ecommerce.component.html',
 })

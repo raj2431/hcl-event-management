@@ -1,5 +1,5 @@
 
-import { Component, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 import flatpickr from 'flatpickr';
 import { LabelComponent } from '../label/label.component';
 
@@ -9,7 +9,7 @@ import { LabelComponent } from '../label/label.component';
   templateUrl: './date-picker.component.html',
   styles: ``
 })
-export class DatePickerComponent {
+export class DatePickerComponent implements OnChanges {
 
   @Input() id!: string;
   @Input() mode: 'single' | 'multiple' | 'range' | 'time' = 'single';
@@ -21,6 +21,18 @@ export class DatePickerComponent {
   @ViewChild('dateInput', { static: false }) dateInput!: ElementRef<HTMLInputElement>;
 
   private flatpickrInstance: flatpickr.Instance | undefined;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes['defaultDate'] || !this.flatpickrInstance) {
+      return;
+    }
+
+    if (this.defaultDate) {
+      this.flatpickrInstance.setDate(this.defaultDate, false);
+    } else {
+      this.flatpickrInstance.clear(false);
+    }
+  }
 
   ngAfterViewInit() {
     this.flatpickrInstance = flatpickr(this.dateInput.nativeElement, {
