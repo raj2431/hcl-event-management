@@ -1,0 +1,44 @@
+[
+  {
+    "id": "7ae58f3c-263f-4590-ad78-4f2899c05298",
+    "title": "Tech Conference 2026",
+    "description": "A technology and innovation conference",
+    "venue": "test",
+    "startDate": "2026-11-20T09:00:00.000Z",
+    "endDate": "2026-11-20T17:00:00.000Z",
+    "status": "published",
+    "createdAt": "2026-11-10",
+    "updatedAt": "2026-10-17T10:56:43.420Z",
+    "category": "tech",
+    "city": "gurgaon",
+    "price": 500,
+    "capacity": 100
+  },
+  {
+    "id": "7ae58f3c-263f-4590-ad78-4f2899c05298",
+    "title": "Event 1",
+    "description": "Sample event",
+    "venue": "Noida, UP",
+    "startDate": "2026-11-10",
+    "endDate": "2026-11-10",
+    "status": "published",
+    "createdAt": "2026-11-10",
+    "updatedAt": "2026-11-10"
+  },
+  {
+    "id": "bfdc9dde-a8a4-48d9-bbd2-8aef49b98d7c",
+    "title": "Tech Conference 2026",
+    "description": "A technology and innovation conference",
+    "category": "tech",
+    "venue": "test",
+    "city": "gurgaon",
+    "startDate": "2026-11-20T09:00:00.000Z",
+    "endDate": "2026-11-20T17:00:00.000Z",
+    "price": 500,
+    "capacity": 100,
+    "bookedSeats": 0,
+    "status": "draft",
+    "createdAt": "2026-10-17T10:52:12.018Z",
+    "updatedAt": "2026-10-17T10:52:12.018Z"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "bookingReference": "EVT-1B7BC64DE816",
+    "eventId": "7ae58f3c-263f-4590-ad78-4f2899c05298",
+    "customerId": 1,
+    "customerName": "Test Customer",
+    "customerEmail": "customer@example.com",
+    "seats": 2,
+    "status": "cancelled",
+    "paymentStatus": "pending",
+    "id": "410da986-09ef-4692-8056-9a6299d67cd1",
+    "createdAt": "2026-10-17T10:29:34.147Z",
+    "updatedAt": "2026-10-17T10:43:50.016Z"
+  },
+  {
+    "bookingReference": "EVT-9B5ECE2301A8",
+    "eventId": "7ae58f3c-263f-4590-ad78-4f2899c05298",
+    "customerId": 1,
+    "customerName": "Test Customer",
+    "customerEmail": "customer@example.com",
+    "seats": 2,
+    "totalAmount": null,
+    "status": "confirmed",
+    "paymentStatus": "pending",
+    "id": "7a4e0436-e98f-43f6-9956-e7d92a6767ab",
+    "createdAt": "2026-10-17T10:30:20.256Z",
+    "updatedAt": "2026-10-17T10:30:20.256Z"
+  }
+]
